@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="免费观看电影网（mianfeiguankandianyingwang）是正版免费影视导航门户，汇集可合法免费观看的电影、电视剧、纪录片、动漫：院线新片、经典老片、高分纪录片、免费高清资源入口与观影指南。">
+<meta name="keywords" content="免费观看电影网, mianfeiguankandianyingwang, 免费电影, 免费看电影, 电影免费观看, 免费影视, 正版免费电影, 高清免费电影, 免费电视剧, 免费纪录片">
+<meta name="author" content="免费观看电影网">
+<meta name="robots" content="index, follow">
+<title>免费观看电影网 - 正版免费影视导航门户 | 电影·电视剧·纪录片·动漫</title>
+<link rel="canonical" href="https://mianfeiguankandianyingwang-cn.github.io/">
+<style>
+/* ================= 基础 ================= */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#f4f7fb; --ink:#12233a; --sub:#5d6f85; --line:#e3ebf5;
+  --green:#12a150; --green-d:#0d7d3d; --blue:#2b6cff; --amber:#f59f00; --card:#fff;
+}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none;outline:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.sec{padding:82px 0;position:relative}
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:40px}
+.sec-t{font-size:30px;font-weight:900;letter-spacing:1px;display:flex;align-items:center;gap:14px}
+.sec-t .bar{width:6px;height:26px;border-radius:3px;background:linear-gradient(var(--green),var(---blue));display:block}
+.sec-t .en{font-size:10px;letter-spacing:3px;color:var(--blue);font-weight:800;text-transform:uppercase;font-family:Arial,sans-serif}
+.sec-s{color:var(--sub);font-size:13px;letter-spacing:1px;font-family:Arial,sans-serif}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 30px;border-radius:30px;font-weight:800;font-size:13px;cursor:pointer;border:0;transition:.28s;white-space:nowrap;letter-spacing:1px}
+.btn-g{background:linear-gradient(135deg,var(--green),var(---blue));color:#fff;box-shadow:0 12px 26px rgba(18,161,80,.24)}
+.btn-g:hover{transform:translateY(-3px);box-shadow:0 18px 34px rgba(18,161,80,.3)}
+.btn-o{border:2px solid var(--green);color:var(--green);background:transparent}
+.btn-o:hover{background:var(--green);color:#fff}
+.chip{display:inline-block;padding:5px 14px;border-radius:20px;font-size:11px;font-weight:800;letter-spacing:1px;background:#e7f6ee;color:var(--green-d);font-family:Arial,sans-serif}
+.free{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:10px;font-size:10px;font-weight:800;color:#fff;background:var(--green);letter-spacing:.5px;font-family:Arial,sans-serif}
+
+/* ================= 顶导 ================= */
+.nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;gap:24px;height:76px}
+.logo{font-size:23px;font-weight:900;letter-spacing:.5px;white-space:nowrap;display:flex;align-items:center;gap:10px}
+.logo .mk{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--green),var(---blue));color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;box-shadow:0 8px 16px rgba(18,161,80,.28)}
+.logo small{font-size:9px;color:var(--sub);font-weight:600;letter-spacing:2px;font-family:Arial,sans-serif;display:block;margin-top:2px}
+.menu{display:flex;gap:6px;flex:1;justify-content:flex-end;flex-wrap:wrap}
+.menu a{padding:10px 16px;font-size:13px;color:var(--sub);transition:.2s;white-space:nowrap;font-weight:700;border-radius:20px}
+.menu a:hover{color:var(--green-d);background:#eafaf0}
+.menu a.on{color:#fff;background:linear-gradient(135deg,var(--green),var(---blue))}
+.search{flex:0 0 auto;display:flex;align-items:center;background:#fff;border:1px solid var(--line);border-radius:24px;padding:6px 14px;gap:6px}
+.search input{border:0;background:transparent;outline:none;font-size:13px;width:130px}
+.search button{background:transparent;border:0;cursor:pointer;font-size:15px;color:var(--blue)}
+.hamb{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+.hamb i{width:24px;height:2px;background:var(--green-d);border-radius:1px}
+
+/* ================= HERO ================= */
+.hero{position:relative;overflow:hidden;padding:90px 0 100px;background:
+  radial-gradient(circle at 88% 12%,rgba(43,108,255,.16),transparent 40%),
+  radial-gradient(circle at 8% 92%,rgba(18,161,80,.16),transparent 42%),
+  linear-gradient(160deg,#eef7ff,#f4fbf7)}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1fr .9fr;gap:54px;align-items:center}
+.hero .kicker{font-family:Arial,sans-serif;font-size:11px;letter-spacing:5px;color:var(--green-d);font-weight:800;text-transform:uppercase}
+.hero h1{font-size:52px;font-weight:900;line-height:1.18;margin:16px 0;letter-spacing:.5px}
+.hero h1 em{font-style:normal;background:linear-gradient(120deg,var(--green),var(---blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lede{font-size:16px;color:var(--sub);margin-bottom:26px;max-width:560px}
+.hero .acts{display:flex;gap:14px;flex-wrap:wrap}
+.hero .hq{margin-top:32px;display:flex;gap:34px;flex-wrap:wrap}
+.hero .hq div{border-left:3px solid var(--green);padding-left:13px}
+.hero .hq b{display:block;font-size:25px;font-weight:900;letter-spacing:.5px;font-family:Arial,sans-serif}
+.hero .hq small{font-size:10px;color:var(--sub);letter-spacing:2px;font-family:Arial,sans-serif}
+/* 免费徽章墙 */
+.badges{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.badge{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;gap:14px;align-items:flex-start;box-shadow:0 10px 24px rgba(18,35,58,.06)}
+.badge .ic{width:46px;height:46px;border-radius:14px;background:#eafaf0;color:var(--green-d);display:flex;align-items:center;justify-content:center;font-size:21px;flex:0 0 auto}
+.badge b{display:block;font-size:15px;margin-bottom:3px}
+.badge p{font-size:12px;color:var(--sub);line-height:1.65}
+
+/* ================= 网格 ================= */
+.grid{display:grid;gap:20px}
+.g6{grid-template-columns:repeat(6,1fr)}
+.g5{grid-template-columns:repeat(5,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+
+/* ================= 栏目1：免费频道（icon 方块 + 计数条） ================= */
+.chan{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px 16px;text-align:center;transition:.3s}
+.chan .ic{width:60px;height:60px;margin:0 auto 14px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:26px;background:linear-gradient(135deg,#eafaf0,#e8f0ff);transition:.3s}
+.chan b{display:block;font-size:15.5px;letter-spacing:.5px;margin-bottom:6px}
+.chan p{font-size:12px;color:var(--sub);line-height:1.7;min-height:42px}
+.chan .bar{height:5px;border-radius:3px;background:var(--line);margin:12px 0 8px;overflow:hidden}
+.chan .bar i{display:block;height:100%;border-radius:3px;background:linear-gradient(90deg,var(--green),var(--blue))}
+.chan .num{font-size:11px;color:var(--green-d);font-weight:800;letter-spacing:1px;font-family:Arial,sans-serif}
+.chan:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(18,35,58,.12)}
+.chan:hover .ic{transform:scale(1.12) rotate(-6deg)}
+
+/* ================= 栏目2：免费榜单（有序列表 + 进度条） ================= */
+.rank{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px 26px 8px;box-shadow:0 10px 26px rgba(18,35,58,.05)}
+.rank-h{display:flex;align-items:center;gap:10px;margin-bottom:20px;padding-bottom:14px;border-bottom:2px dashed var(--line)}
+.rank-h b{font-size:18px;letter-spacing:1px}
+.rank-h .en{font-size:9px;letter-spacing:2px;color:var(--blue);font-weight:800;font-family:Arial,sans-serif}
+ol.items{list-style:none;counter-reset:rk}
+ol.items li{counter-increment:rk;display:grid;grid-template-columns:52px 1fr auto;gap:14px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}
+ol.items li:last-child{border-bottom:0}
+ol.items li::before{content:counter(rk,decimal-leading-zero);font-weight:900;font-size:20px;color:var(--line);font-family:Arial,sans-serif;transition:.2s}
+ol.items li:nth-child(1)::before{color:var(--amber)}
+ol.items li:nth-child(2)::before{color:#9ca3af}
+ol.items li:nth-child(3)::before{color:#cd7f32}
+ol.items li:hover::before{color:var(--green)}
+ol.items .mid b{font-size:14px;display:block;letter-spacing:.3px}
+ol.items .mid span{font-size:11.5px;color:var(--sub)}
+ol.items .sc{text-align:right}
+ol.items .sc .v{display:block;font-weight:900;color:var(--green-d);font-family:Arial,sans-serif;font-size:15px}
+ol.items .sc .pg{width:86px;height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin-top:5px;display:inline-block}
+ol.items .sc .pg i{display:block;height:100%;border-radius:3px;background:linear-gradient(90deg,var(--green),var(---blue))}
+
+/* ================= 栏目3：免费片单（横版封面卡） ================= */
+.pick{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.32s;display:grid;grid-template-rows:190px 1fr}
+.pick:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(18,35,58,.13)}
+.pick .cvr{position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;color:#fff}
+.pick .cvr .lb{position:absolute;top:12px;left:12px;background:var(--green);color:#fff;font-size:10px;font-weight:800;padding:5px 12px;border-radius:12px;letter-spacing:1px;font-family:Arial,sans-serif}
+.pick .cvr .yr{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.9);color:var(--ink);font-size:10px;font-weight:900;padding:5px 10px;border-radius:12px;font-family:Arial,sans-serif}
+.pick .cvr b{font-size:18px;font-weight:900;letter-spacing:.5px;text-shadow:0 4px 14px rgba(0,0,0,.45);line-height:1.3}
+.pick .meta{padding:14px 16px;display:flex;flex-direction:column}
+.pick .meta .row{display:flex;justify-content:space-between;font-size:11px;color:var(--sub);margin-bottom:8px;gap:8px;flex-wrap:wrap;font-family:Arial,sans-serif;letter-spacing:.5px}
+.pick .meta p{font-size:12.5px;color:var(--sub);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:1.75;flex:1}
+.pick .meta .go{margin-top:10px;font-size:12px;font-weight:800;color:var(--green-d);letter-spacing:1px;font-family:Arial,sans-serif;border-top:1px dashed var(--line);padding-top:9px}
+
+/* ================= 栏目4：省钱指南（手风琴） ================= */
+.guide-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;align-items:start}
+.acc{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card);margin-bottom:12px}
+.acc-h{padding:18px 22px;cursor:pointer;display:flex;align-items:center;gap:14px;font-weight:800;font-size:15px;user-select:none;transition:.2s}
+.acc-h:hover{background:#f0f8f4}
+.acc-h .q{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--green),var(---blue));color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;flex:0 0 auto;font-family:Arial,sans-serif}
+.acc-h .ar{margin-left:auto;color:var(--green);transition:.3s;font-size:13px}
+.acc.open .ar{transform:rotate(180deg)}
+.acc-b{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.acc-b .in{padding:0 22px 20px 66px;font-size:13.5px;color:var(--sub);line-height:1.85}
+.acc-b .in b{color:var(--ink)}
+.side{background:linear-gradient(160deg,#12233a,#1d4a7a);color:#e6eefa;border-radius:20px;padding:26px}
+.side h4{font-size:17px;margin-bottom:6px;letter-spacing:.5px}
+.side .sub{font-size:12px;color:#9fb3cc;margin-bottom:18px}
+.side ul{list-style:none}
+.side li{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:13.5px;display:flex;gap:10px}
+.side li:last-child{border-bottom:0}
+.side li i{color:var(--green);font-style:normal;font-weight:900}
+.side .note{margin-top:18px;padding:14px;border-radius:12px;background:rgba(18,161,80,.16);font-size:12.5px;color:#cfe8da;line-height:1.75}
+
+/* ================= 栏目5：观影资讯（图文交错） ================= */
+.news{display:grid;grid-template-columns:200px 1fr;gap:22px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:18px;align-items:center;transition:.28s}
+.news:hover{box-shadow:0 18px 38px rgba(18,35,58,.1);transform:translateX(3px)}
+.news:nth-child(even){grid-template-columns:1fr 200px}
+.news:nth-child(even) .thum{order:2}
+.news .thum{height:130px;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;gap:8px;font-weight:800;letter-spacing:2px;font-size:13px}
+.news .thum small{font-size:10px;font-weight:500;letter-spacing:1px;opacity:.9}
+.news h4{font-size:17px;margin-bottom:8px;letter-spacing:.3px}
+.news p{font-size:13px;color:var(--sub);line-height:1.8;margin-bottom:10px}
+.news .info{font-size:11px;color:var(--green-d);letter-spacing:1px;font-family:Arial,sans-serif;font-weight:800}
+
+/* ================= 栏目6：关于（数据条 + 三栏） ================= */
+.about{background:linear-gradient(150deg,#12233a,#0d5c3a);color:#e6eefa;border-radius:26px;padding:44px}
+.about .lh{display:grid;grid-template-columns:1fr .85fr;gap:40px;margin-bottom:34px}
+.about .lh h2{font-size:32px;letter-spacing:1px;line-height:1.35}
+.about .lh .lead{color:#a8bcd4;font-size:14.5px;margin-top:12px}
+.about .stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.18);border-bottom:1px solid rgba(255,255,255,.18)}
+.about .stats div{text-align:center;padding:24px 8px}
+.about .stats b{display:block;font-size:32px;font-weight:900;color:#7bffb0;line-height:1.1;font-family:Arial,sans-serif}
+.about .stats small{font-size:11px;color:#a8bcd4;letter-spacing:2px;font-family:Arial,sans-serif}
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.feat div{border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:20px;background:rgba(255,255,255,.05)}
+.feat h4{font-size:15px;margin-bottom:8px;color:#fff;letter-spacing:.5px;display:flex;align-items:center;gap:8px}
+.feat h4 .tick{width:20px;height:20px;border-radius:6px;background:var(--green);color:#fff;font-size:11px;display:inline-flex;align-items:center;justify-content:center;font-family:Arial,sans-serif;text-decoration:none}
+.feat p{font-size:12.5px;color:#a8bcd4;line-height:1.75}
+.siteinfo{margin-top:24px;padding:22px;border-radius:16px;background:rgba(0,0,0,.24);font-size:13px;color:#c3d2e4}
+.siteinfo b{color:#fff}
+
+/* ================= 页脚 ================= */
+.foot{border-top:1px solid var(--line);padding:54px 0 28px;color:var(--sub);font-size:13px}
+.f-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:26px;margin-bottom:28px}
+.f-links a{margin-right:24px;color:var(--sub);font-size:13px;letter-spacing:.5px}
+.f-links a:hover{color:var(--green-d)}
+.f-cat{display:grid;grid-template-columns:repeat(6,1fr);gap:10px 26px;margin:24px 0;font-family:Arial,sans-serif}
+.f-cat a{font-size:12.5px;color:var(--sub);letter-spacing:.5px}
+.f-cat a:hover{color:var(--green-d)}
+.copy{text-align:center;border-top:1px dashed var(--line);padding-top:24px;letter-spacing:.5px;font-family:Arial,sans-serif}
+.copy b{color:var(--ink)}
+
+/* ================= 移动端 ================= */
+@media(max-width:1100px){.g6{grid-template-columns:repeat(4,1fr)}.g5,.g4{grid-template-columns:repeat(3,1fr)}.about .lh{grid-template-columns:1fr}}
+@media(max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;gap:40px;padding:60px 24px}
+  .hero h1{font-size:42px}
+  .badges{grid-template-columns:repeat(2,1fr)}
+  .g3,.g2,.feat{grid-template-columns:repeat(2,1fr)}
+  .guide-wrap{grid-template-columns:1fr}
+  .about .stats{grid-template-columns:repeat(2,1fr)}
+  .news,.news:nth-child(even){grid-template-columns:150px 1fr}
+}
+@media(max-width:700px){
+  .g6,.g5,.g4,.g3{grid-template-columns:repeat(2,1fr);gap:14px}
+  .chan{padding:16px 10px}.chan .ic{width:48px;height:48px;font-size:21px}
+  table{font-size:12px}
+}
+@media(max-width:640px){
+  .sec{padding:56px 0}.sec-t{font-size:24px}
+  .nav-in{height:68px;gap:10px}
+  .search{display:none}
+  .menu{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;flex-direction:column;padding:14px;border-bottom:1px solid var(--line)}
+  .menu.open{display:flex}
+  .menu a{text-align:center;padding:14px;border-radius:12px}
+  .hamb{display:flex}
+  .hero{padding:52px 0}.hero .wrap{padding:44px 24px}.hero h1{font-size:32px}
+  .g6,.g5,.g4,.g3,.g2,.feat,.about .stats{grid-template-columns:1fr 1fr}
+  .f-cat{grid-template-columns:repeat(2,1fr)}
+  .about{padding:30px 22px}.about .lh h2{font-size:25px}
+  .news,.news:nth-child(even){grid-template-columns:1fr;gap:12px}
+  .news .thum{height:90px;order:0!important}
+  .acc-b .in{padding-left:22px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<!-- ============ 顶部导航 ============ -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#">
+      <span class="mk">免</span>
+      <span>免费观看电影网<small>FREE CINEMA</small></span>
+    </a>
+    <div class="search">
+      <input type="text" placeholder="片名 / 演员 / 类型" aria-label="搜索">
+      <button>⌕</button>
+    </div>
+    <nav class="menu" id="menu">
+      <a href="#home">首页</a>
+      <a href="#chan">免费频道</a>
+      <a href="#rank">热播榜单</a>
+      <a href="#pick">免费片单</a>
+      <a href="#guide">省钱指南</a>
+      <a href="#news">观影资讯</a>
+      <a href="#about">关于本站</a>
+    </nav>
+    <div class="hamb" id="hamb"><i></i><i></i><i></i></div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <div>
+      <span class="kicker">Legal · Free · HD</span>
+      <h1>正版授权，<em>免费看</em><br>好电影不该有门槛</h1>
+      <p class="lede">免费观看电影网，是专注"可合法免费观看"的影视导航门户。我们不搬运、不盗链，只做一件事：把散落在各正版平台的免费片源，按电影、电视剧、纪录片、动漫分类整理好，让你少走弯路，直接看到好内容。</p>
+      <div class="acts">
+        <a class="btn btn-g" href="#pick">免费选片 →</a>
+        <a class="btn btn-o" href="#guide">省钱指南</a>
+      </div>
+      <div class="hq">
+        <div><b>6,200+</b><small>正版免费影片</small></div>
+        <div><b>4</b><small>免费频道</small></div>
+        <div><b>0</b><small>付费门槛</small></div>
+      </div>
+    </div>
+    <div>
+      <div class="badges">
+        <div class="badge"><span class="ic">◎</span><div><b>院线新片</b><p>部分正版平台提供免费限时观看</p></div></div>
+        <div class="badge"><span class="ic">▤</span><div><b>经典老片</b><p>公版与平台免费专区，高清修复</p></div></div>
+        <div class="badge"><span class="ic">◉</span><div><b>纪录片</b><p>自然、历史、人文，免费片源最丰富</p></div></div>
+        <div class="badge"><span class="ic">◆</span><div><b>动漫番剧</b><p>正版免费集数，周更同步</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目1：免费频道（icon 方块 + 计数条） ============ -->
+<section class="sec" id="chan">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2 class="sec-t"><span class="bar"></span>免费频道<span class="en">Free Channels</span></h2>
+      <span class="sec-s">按内容形态分，不按平台分</span>
+    </div>
+    <div class="grid g6">
+      <div class="chan"><div class="ic">♪</div><b>电影</b><p>剧情、喜剧、动作、科幻、动画长片，全部可免费观看。</p><div class="bar"><i style="width:92%"></i></div><span class="num">2,860 部</span></div>
+      <div class="chan"><div class="ic">▣</div><b>电视剧</b><p>国产剧、美剧、日韩剧，正版免费集数与完结剧。</p><div class="bar"><i style="width:78%"></i></div><span class="num">1,540 部</span></div>
+      <div class="chan"><div class="ic">◎</div><b>纪录片</b><p>自然地理、历史人物、社会调查，免费片源最多。</p><div class="bar"><i style="width:86%"></i></div><span class="num">1,120 部</span></div>
+      <div class="chan"><div class="ic">★</div><b>动漫</b><p>国漫、日番、动画电影，正版免费集同步更新。</p><div class="bar"><i style="width:64%"></i></div><span class="num">680 部</span></div>
+      <div class="chan"><div class="ic">◈</div><b>综艺</b><p>脱口秀、真人秀、文化类节目，官方免费回看。</p><div class="bar"><i style="width:52%"></i></div><span class="num">420 档</span></div>
+      <div class="chan"><div class="ic">◆</div><b>短片</b><p>学生作业、独立短片、获奖微电影，全免费。</p><div class="bar"><i style="width:40%"></i></div><span class="num">580 部</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目2：免费榜单（有序列表 + 进度条） ============ -->
+<section class="sec" id="rank" style="background:#eaf3fb">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2 class="sec-t"><span class="bar"></span>免费热播榜<span class="en">Free Top</span></h2>
+      <a class="btn btn-o" href="#">完整榜单 →</a>
+    </div>
+    <div class="grid g3">
+      <div class="rank">
+        <div class="rank-h"><b>免费电影榜</b><span class="en">Movies</span></div>
+        <ol class="items">
+          <li><div class="mid"><b>肖申克的救赎</b><span>美国 · 剧情 · 142 分钟</span></div><div class="sc"><span class="v">9.7</span><span class="pg"><i style="width:97%"></i></span></div></li>
+          <li><div class="mid"><b>阿甘正传</b><span>美国 · 励志 · 142 分钟</span></div><div class="sc"><span class="v">9.5</span><span class="pg"><i style="width:95%"></i></span></div></li>
+          <li><div class="mid"><b>千与千寻</b><span>日本 · 动画 · 125 分钟</span></div><div class="sc"><span class="v">9.4</span><span class="pg"><i style="width:94%"></i></span></div></li>
+          <li><div class="mid"><b>泰坦尼克号</b><span>美国 · 爱情 · 194 分钟</span></div><div class="sc"><span class="v">9.4</span><span class="pg"><i style="width:94%"></i></span></div></li>
+          <li><div class="mid"><b>盗梦空间</b><span>美国 · 科幻 · 148 分钟</span></div><div class="sc"><span class="v">9.3</span><span class="pg"><i style="width:93%"></i></span></div></li>
+        </ol>
+      </div>
+      <div class="rank">
+        <div class="rank-h"><b>免费剧集榜</b><span class="en">TV Series</span></div>
+        <ol class="items">
+          <li><div class="mid"><b>漫长的季节</b><span>中国大陆 · 悬疑 · 12 集</span></div><div class="sc"><span class="v">9.4</span><span class="pg"><i style="width:94%"></i></span></div></li>
+          <li><div class="mid"><b>甄嬛传</b><span>中国大陆 · 古装 · 76 集</span></div><div class="sc"><span class="v">9.3</span><span class="pg"><i style="width:93%"></i></span></div></li>
+          <li><div class="mid"><b>大明王朝 1566</b><span>中国大陆 · 历史 · 46 集</span></div><div class="sc"><span class="v">9.7</span><span class="pg"><i style="width:97%"></i></span></div></li>
+          <li><div class="mid"><b>琅琊榜</b><span>中国大陆 · 古装 · 54 集</span></div><div class="sc"><span class="v">9.4</span><span class="pg"><i style="width:94%"></i></span></div></li>
+          <li><div class="mid"><b>绝命毒师</b><span>美国 · 犯罪 · 62 集</span></div><div class="sc"><span class="v">9.6</span><span class="pg"><i style="width:96%"></i></span></div></li>
+        </ol>
+      </div>
+      <div class="rank">
+        <div class="rank-h"><b>免费纪录片榜</b><span class="en">Documentary</span></div>
+        <ol class="items">
+          <li><div class="mid"><b>地球脉动</b><span>英国 · 自然 · 11 集</span></div><div class="sc"><span class="v">9.7</span><span class="pg"><i style="width:97%"></i></span></div></li>
+          <li><div class="mid"><b>河西走廊</b><span>中国大陆 · 历史 · 10 集</span></div><div class="sc"><span class="v">9.7</span><span class="pg"><i style="width:97%"></i></span></div></li>
+          <li><div class="mid"><b>人类星球</b><span>英国 · 人文 · 8 集</span></div><div class="sc"><span class="v">9.7</span><span class="pg"><i style="width:97%"></i></span></div></li>
+          <li><div class="mid"><b>航拍中国</b><span>中国大陆 · 地理 · 34 集</span></div><div class="sc"><span class="v">9.2</span><span class="pg"><i style="width:92%"></i></span></div></li>
+          <li><div class="mid"><b>我在故宫修文物</b><span>中国大陆 · 人文 · 3 集</span></div><div class="sc"><span class="v">9.4</span><span class="pg"><i style="width:94%"></i></span></div></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目3：免费片单（横版封面卡） ============ -->
+<section class="sec" id="pick">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2 class="sec-t"><span class="bar"></span>编辑精选 · 免费片单<span class="en">Free Picks</span></h2>
+      <span class="sec-s">均为正版平台可免费观看的影片</span>
+    </div>
+    <div class="grid g4">
+      <article class="pick"><div class="cvr" style="background:linear-gradient(160deg,#3a6ea5,#7aa6cf)"><span class="lb">免费</span><span class="yr">1994</span><b>肖申克的救赎</b></div><div class="meta"><div class="row"><span>美国 · 剧情</span><span>142 分钟</span></div><p>银行家含冤入狱，用十九年挖通一条通往自由的路。关于希望最有力的表达。</p><span class="go">正版播放平台 →</span></div></article>
+      <article class="pick"><div class="cvr" style="background:linear-gradient(160deg,#7a5a3a,#c08a5a)"><span class="lb">免费</span><span class="yr">1994</span><b>阿甘正传</b></div><div class="meta"><div class="row"><span>美国 · 励志</span><span>142 分钟</span></div><p>智商只有 75 的男孩，跑过了越战、乒乓外交与整整一代美国人的记忆。</p><span class="go">正版播放平台 →</span></div></article>
+      <article class="pick"><div class="cvr" style="background:linear-gradient(160deg,#3a7a6a,#7ab0a0)"><span class="lb">免费</span><span class="yr">2001</span><b>千与千寻</b></div><div class="meta"><div class="row"><span>日本 · 动画</span><span>125 分钟</span></div><p>十岁女孩误入神灵浴场，用劳动换回父母与自己的名字。宫崎骏的成人童话。</p><span class="go">正版播放平台 →</span></div></article>
+      <article class="pick"><div class="cvr" style="background:linear-gradient(160deg,#2a3a5a,#5a7aa8)"><span class="lb">免费</span><span class="yr">2010</span><b>盗梦空间</b></div><div class="meta"><div class="row"><span>美国 · 科幻</span><span>148 分钟</span></div><p>在别人的梦里植入一个念头。诺兰把"梦境"拍成了可被推理的几何学。</p><span class="go">正版播放平台 →</span></div></article>
+      <article class="pick"><div class="cvr" style="background:linear-gradient(160deg,#8a3a4a,#c07a8a)"><span class="lb">免费</span><span class="yr">1997</span><b>泰坦尼克号</b></div><div class="meta"><div class="row"><span>美国 · 爱情</span><span>194 分钟</span></div><p>最豪华的船沉了，一段爱情却一直漂到现在。卡梅隆的工业级浪漫。</p><span class="go">正版播放平台 →</span></div></article>
+      <article class="pick"><div class="cvr" style="background:linear-gradient(160deg,#5a4a7a,#9a80c0)"><span class="lb">免费</span><span class="yr">2009</span><b>机器人总动员</b></div><div class="meta"><div class="row"><span>美国 · 动画</span><span>98 分钟</span></div><p>地球被垃圾覆盖，最后一个机器人爱上了另一台机器。几乎无对白的太空诗。</p><span class="go">正版播放平台 →</span></div></article>
+      <article class="pick"><div class="cvr" style="background:linear-gradient(160deg,#4a6a3a,#8ab060)"><span class="lb">免费</span><span class="yr">1993</span><b>霸王别姬</b></div><div class="meta"><div class="row"><span>中国 · 剧情</span><span>171 分钟</span></div><p>一生一旦，从民国唱到文革。"说的是一辈子，差一年、一个月、一天、一个时辰，都不算一辈子。"</p><span class="go">正版播放平台 →</span></div></article>
+      <article class="pick"><div class="cvr" style="background:linear-gradient(160deg,#6a5a3a,#b0a070)"><span class="lb">免费</span><span class="yr">2002</span><b>无间道</b></div><div class="meta"><div class="row"><span>中国香港 · 犯罪</span><span>101 分钟</span></div><p>一个警察卧底在黑帮，一个黑帮卧底在警队。华语警匪片的顶点。</p><span class="go">正版播放平台 →</span></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目4：省钱指南（手风琴 + 侧栏） ============ -->
+<section class="sec" id="guide" style="background:#eaf3fb">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2 class="sec-t"><span class="bar"></span>免费观影省钱指南<span class="en">Save Guide</span></h2>
+      <span class="sec-s">6 个方法，把观影成本降到最低</span>
+    </div>
+    <div class="guide-wrap">
+      <div>
+        <div class="acc open"><div class="acc-h"><span class="q">Q1</span>哪些内容本来就是免费的？<span class="ar">▾</span></div><div class="acc-b"><div class="in"><p><b>纪录片、公版老片、平台免费专区、官方短视频二创</b>——这四类几乎常年免费。纪录片是性价比最高的免费内容：制作精良、时长充足、无广告。</p></div></div></div>
+        <div class="acc"><div class="acc-h"><span class="q">Q2</span>会员一定要买年费吗？<span class="ar">▾</span></div><div class="acc-b"><div class="in"><p>不一定。多数平台提供 <b>连续包月 / 联合会员 / 运营商权益 / 银行卡活动</b>，折算单价可低至 5–8 元/月。建议只买当下最需要的 1–2 个，其余用免费时段补齐。</p></div></div></div>
+        <div class="acc"><div class="acc-h"><span class="q">Q3</span>院线新片什么时候能免费看？<span class="ar">▾</span></div><div class="acc-b"><div class="in"><p>一般规律：<b>院线下映后 1–3 个月</b>进入付费点播，<b>6–12 个月</b>进入平台会员免费库，<b>2 年以上</b>常开放单片免费。耐心等，等于免费。</p></div></div></div>
+        <div class="acc"><div class="acc-h"><span class="q">Q4</span>如何避开"假免费"？<span class="ar">▾</span></div><div class="acc-b"><div class="in"><p>三类陷阱：<b>标题党跳转</b>（点开是赌博/交友）、<b>盗链播放页</b>（侵权且带恶意广告）、<b>诱导分享</b>（看完一集要拉 3 个好友）。认准官方应用商店的正版 App。</p></div></div></div>
+        <div class="acc"><div class="acc-h"><span class="q">Q5</span>学生 / 老人有什么优惠？<span class="ar">▾</span></div><div class="acc-b"><div class="in"><p>多个平台提供 <b>学生认证价、家庭共享账号、敬老优惠、运营商套餐赠送</b>。一部会员可分 5 个设备，家庭共享是最省的方式。</p></div></div></div>
+        <div class="acc"><div class="acc-h"><span class="q">Q6</span>离线下载算不算省钱？<span class="ar">▾</span></div><div class="acc-b"><div class="in"><p>算。在 <b>Wi-Fi 环境下提前下载</b>，既省流量也避免会员到期后重看付费。注意：下载版权受平台限制，跨设备可能失效。</p></div></div></div>
+      </div>
+      <aside class="side">
+        <h4>按场景选片</h4>
+        <p class="sub">不知道看什么时，先回答一个问题</p>
+        <ul>
+          <li><i>01</i><span><b>想被治愈</b> → 纪录片 / 动画 / 生活流剧情</span></li>
+          <li><i>02</i><span><b>想动脑子</b> → 悬疑 / 犯罪 / 高概念科幻</span></li>
+          <li><i>03</i><span><b>想放松</b> → 情景喜剧 / 综艺 / 老港片</span></li>
+          <li><i>04</i><span><b>陪孩子</b> → 动画长片 / 自然纪录片</span></li>
+          <li><i>05</i><span><b>陪长辈</b> → 年代剧 / 戏曲 / 战争历史</span></li>
+          <li><i>06</i><span><b>一个人</b> → 文艺片 / 独立电影 / 短片</span></li>
+        </ul>
+        <div class="note">本站只做正版免费内容导航，不提供任何盗版资源、破解账号或绕过付费的技术方法。支持创作者，影视行业才会继续产出好作品。</div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目5：观影资讯（图文交错） ============ -->
+<section class="sec" id="news">
+  <div class="wrap">
+    <div class="sec-h">
+      <h2 class="sec-t"><span class="bar"></span>观影资讯<span class="en">Cinema News</span></h2>
+      <a class="btn btn-o" href="#">全部资讯 →</a>
+    </div>
+    <article class="news">
+      <div class="thum" style="background:linear-gradient(135deg,#12a150,#2b6cff)">免费片单<small>FREE LIST</small></div>
+      <div>
+        <h4>2026 年仍可在正版平台免费观看的 30 部高分电影</h4>
+        <p>我们逐平台核对了免费专区，整理出一份"不用花钱也能看完"的片单。以豆瓣 8.5 分以上为门槛，覆盖剧情、动画、科幻、纪录片四类，并标注了当前可免费观看的平台与集数限制。</p>
+        <span class="info">片单整理 · 8 分钟阅读</span>
+      </div>
+    </article>
+    <article class="news">
+      <div class="thum" style="background:linear-gradient(135deg,#f59f00,#e8590c)">省钱<small>SAVE</small></div>
+      <div>
+        <h4>一年看 200 部电影，只花 96 元：我的会员组合方案</h4>
+        <p>核心思路是"错峰订阅 + 联合会员 + 免费时段"。本文给出 4 个主流平台的组合节奏表，以及哪些内容根本不需要会员（纪录片、公版片、官方免费集）。</p>
+        <span class="info">经验分享 · 6 分钟阅读</span>
+      </div>
+    </article>
+    <article class="news">
+      <div class="thum" style="background:linear-gradient(135deg,#7048e8,#1c7ed6)">避坑<small>AVOID</small></div>
+      <div>
+        <h4>识别"免费电影"钓鱼站：5 个信号</h4>
+        <p>域名随机拼接、播放页强制跳转、要求下载不明播放器、弹窗诱导充值、片名与封面不符——出现任意两条，基本可判定为盗链或诈骗站。附正版平台官方域名清单。</p>
+        <span class="info">安全提示 · 4 分钟阅读</span>
+      </div>
+    </article>
+    <article class="news">
+      <div class="thum" style="background:linear-gradient(135deg,#0d7d3d,#12a150)">纪录<small>DOCO</small></div>
+      <div>
+        <h4>为什么纪录片是最值得"免费看"的品类</h4>
+        <p>制作成本高、单集时长长、广告少、知识密度高。国内外主流平台均把纪录片作为免费内容的主力，且大量公版自然类纪录片可合法免费传播。</p>
+        <span class="info">品类观察 · 5 分钟阅读</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 栏目6：关于（数据条 + 三栏） ============ -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="about">
+      <div class="lh">
+        <div>
+          <h2>免费，不等于低质<br>更不等于盗版</h2>
+          <p class="lead">免费观看电影网（mianfeiguankandianyingwang），是聚焦"正版免费影视"的导航门户。我们的筛选标准只有三条：是否合法授权、是否真正免费、是否值得花时间。三者同时满足，才会出现在首页。</p>
+        </div>
+        <div class="stats">
+          <div><b>6,200+</b><small>正版免费影片</small></div>
+          <div><b>4</b><small>内容频道</small></div>
+          <div><b>12</b><small>省钱技巧</small></div>
+          <div><b>0</b><small>盗链资源</small></div>
+        </div>
+      </div>
+      <div class="feat">
+        <div><h4><span class="tick">✓</span>只收正版</h4><p>片源来自持牌平台与公版内容。不搬运、不盗链、不提供破解方法，也不挂可疑跳转广告。</p></div>
+        <div><h4><span class="tick">✓</span>标注成本</h4><p>每部影片标注"免费 / 会员免费 / 单片付费"，避免点开才发现要花钱。</p></div>
+        <div><h4><span class="tick">✓</span>更新及时</h4><p>院线下映、平台转免、限时免费活动，每周核对一次，过期链接及时下架。</p></div>
+      </div>
+      <div class="siteinfo">
+        <p><b>网站名称：</b>免费观看电影网 —— 正版免费影视导航门户 · 免费电影 · 免费看电影 · 电影免费观看 · 免费影视 · 正版免费电影 · 高清免费电影 · 免费电视剧 · 免费纪录片</p>
+        <p style="margin-top:8px"><b>网站网址：</b><a href="https://mianfeiguankandianyingwang-cn.github.io/" style="color:#7bffb0">https://mianfeiguankandianyingwang-cn.github.io/</a></p>
+        <p style="margin-top:8px"><b>内容声明：</b>本演示页面为静态模板示例，影片名称、年份、评分、时长与简介均为示例占位内容，仅供界面展示与学习使用，不代表真实片源状态与授权情况。影视作品版权归原作者及版权方所有，请在正版平台观看，支持创作者。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 页脚 ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="f-top">
+      <div>
+        <a class="logo" href="#" style="font-size:19px"><span class="mk">免</span><span>免费观看电影网<small>FREE CINEMA</small></span></a>
+        <p style="margin-top:10px;max-width:430px">正版免费影视导航。把好内容，送到不花冤枉钱的人面前。</p>
+      </div>
+      <div class="f-links">
+        <a href="#home">首页</a>
+        <a href="#chan">免费频道</a>
+        <a href="#rank">热播榜单</a>
+        <a href="#pick">免费片单</a>
+        <a href="#guide">省钱指南</a>
+        <a href="#news">观影资讯</a>
+        <a href="#about">关于本站</a>
+        <a href="#">片源状态</a>
+      </div>
+    </div>
+    <div class="f-cat">
+      <a href="#">免费电影</a>
+      <a href="#">免费看电影</a>
+      <a href="#">电影免费观看</a>
+      <a href="#">免费影视</a>
+      <a href="#">正版免费电影</a>
+      <a href="#">高清免费电影</a>
+      <a href="#">免费电视剧</a>
+      <a href="#">免费纪录片</a>
+      <a href="#">免费动漫</a>
+      <a href="#">院线新片</a>
+      <a href="#">经典老片</a>
+      <a href="#">会员省钱</a>
+    </div>
+    <div class="copy">
+      © 2026 免费观看电影网 mianfeiguankandianyingwang　|　正版免费影视导航　|　<a href="#" style="color:var(--green-d)">回到顶部 ↑</a><br>
+      <b>网站网址：https://mianfeiguankandianyingwang-cn.github.io/</b>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('hamb').addEventListener('click',function(){
+  document.getElementById('menu').classList.toggle('open');
+});
+document.querySelectorAll('.menu a').forEach(function(a){
+  a.addEventListener('click',function(){document.getElementById('menu').classList.remove('open');});
+});
+window.addEventListener('scroll',function(){
+  var y=window.scrollY+150,cur='';
+  document.querySelectorAll('section[id]').forEach(function(s){if(s.offsetTop<=y)cur=s.id;});
+  document.querySelectorAll('.menu a').forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+cur);});
+});
+document.querySelectorAll('.acc-h').forEach(function(h){
+  h.addEventListener('click',function(){
+    var b=h.nextElementSibling,o=h.parentElement.classList.toggle('open');
+    b.style.maxHeight = o ? b.scrollHeight+40+'px' : '0px';
+  });
+});
+window.addEventListener('load',function(){
+  var o=document.querySelector('.acc.open');
+  if(o) o.querySelector('.acc-b').style.maxHeight = o.querySelector('.acc-b').scrollHeight+40+'px';
+});
+</script>
+</body>
+</html>
